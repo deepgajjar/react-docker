@@ -1,0 +1,13 @@
+services:
+  react-app-dev:
+    container_name: react-app-container
+    image: react-app-dev-image
+    build: 
+      context: .
+      dockerfile: DockerFile
+    ports: 
+      - "3000:3000"
+    volumes:
+      - .:/react-app
+      - /react-app/node_modules
+    command: npm run start
